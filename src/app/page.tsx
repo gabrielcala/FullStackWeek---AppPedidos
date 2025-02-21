@@ -4,7 +4,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className="bg-slate-700 items-center justify-center flex flex-col h-screen">
+    <div className="flex h-screen flex-col items-center justify-center bg-slate-700">
       <h1>Mc Donalds</h1>
       <Button>Buscar</Button>
       <Input></Input>
