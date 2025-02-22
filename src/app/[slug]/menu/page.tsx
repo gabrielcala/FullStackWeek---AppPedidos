@@ -1,4 +1,7 @@
+import { notFound } from "next/navigation";
+
 import { db } from "@/lib/prisma";
+
 import RestaurantHeader from "./components/header";
 import RestaurantCategories from "./components/categories";
 
@@ -17,7 +20,7 @@ const RestaurantMenuPage = async ({
 }: RestaurantMenuPageProps) => {
   const { slug } = await params;
   const { consumptionMethod } = await searchParams;
-  if (!isConsumptionMethodValid(consumptionMethod)) {
+  if (!isConsuptionMethodValid(consumptionMethod)) {
     return notFound();
   }
   const restaurant = await db.restaurant.findUnique({
@@ -40,3 +43,4 @@ const RestaurantMenuPage = async ({
 };
 
 export default RestaurantMenuPage;
+
